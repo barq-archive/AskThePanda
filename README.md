@@ -32,10 +32,10 @@ if you don't have anaconda download from [here](https://anaconda.org/)
 
 ## Examples
 - Big screen:
-<img src="screenshots/panda-full-screen.png" alt="Full Screen" style="height: 75%;"/>
+<img src="screenshots/panda-full-screen.png" alt="Full Screen" width="100"/>
 
 - Small screen:
-<img src="screenshots/pnda-small-screen.png" alt="Full Screen" style="height: 75%;"/>
+<img src="screenshots/pnda-small-screen.png" alt="Full Screen" width="100"/>
 
 License
 -------

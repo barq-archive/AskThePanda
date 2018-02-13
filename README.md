@@ -3,6 +3,8 @@
 Ask the panda is open source simple template for offers booking website that use Ajax to get information.<br/>
 The website divide the page into control area and offers area that support big screens and small screens such as mobiles.<br/>
 
+<img src="static/images/panda.png" alt="Icon" width="60"/>
+
 ## Requirements
 Download the required libraries for code using following terminal command:
 - Import anaconda environment
@@ -32,10 +34,10 @@ if you don't have anaconda download from [here](https://anaconda.org/)
 
 ## Examples
 - Big screen:
-<img src="screenshots/panda-full-screen.png" alt="Full Screen" width="100"/>
+<img src="screenshots/panda-full-screen.png" alt="Full Screen" width="350"/>
 
 - Small screen:
-<img src="screenshots/pnda-small-screen.png" alt="Full Screen" width="100"/>
+<img src="screenshots/pnda-small-screen.png" alt="Small Screen" width="350"/>
 
 License
 -------

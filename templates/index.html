@@ -1,0 +1,148 @@
+
+
+<!DOCTYPE html>
+<html lang="en-US">
+   <head>
+      <meta charset="UTF-8" />
+      <!-- ## Compatiblity ## -->
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
+      <!-- ## SEO & Social ## -->
+      <meta name="description" content="Ask the pandas will find the best travel offers for you such as hotels and plans." />
+      <meta name="robots" content="index, follow" />
+      <meta name="referrer" content="always" />
+      <meta property="og:title" content="Ask The Panda" />
+      <meta property="og:description" content="Ask the panda is your travel adviser, it will help you find the best offers." />
+      <meta name="twitter:title" content="Ask The Panda" >
+      <meta name="twitter:description" content="Ask the panda is your travel adviser, it will help you find the best offers." />
+      <title>Ask the panda your offer adviser</title>
+      <!-- ## Styles ## -->
+      <!-- common -->
+      <link rel="icon" type="image/png" href="./static/images/panda.png" sizes="32x32">
+      <link rel="stylesheet" type="text/css" href="./static/css/common/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="./static/css/common/bootstrap-theme.min.css" >
+      <link rel="stylesheet" type="text/css" href="./static/css/common/jquery-ui.min.css" >
+
+
+      <!-- custom -->
+      <link rel='stylesheet' href='./static/css/main.css' type='text/css' media='screen' />
+      <!-- ## Javascript ## -->
+      <!-- common-->
+      <script type="text/javascript" src="./static/js/common/jquery-3.3.1.min.js"></script>
+      <script type="text/javascript"  src="./static/js/common/jquery-ui.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+      <script type="text/javascript"  src="./static/js/common/bootstrap.min.js"></script>
+
+
+      <!-- custom -->
+      <script type="text/javascript">
+         {% if cities %}
+              var city_list = {{ cities|tojson }}
+         {% endif %}
+
+      </script>
+      <script type="text/javascript"  src="./static/js/autocomplete.js"></script>
+      <script type="text/javascript"  src="./static/js/main.js"></script>
+   </head>
+   <body>
+      <div class="my-container">
+         <!-- Control Section -->
+         <div class="section1">
+            <div class="card-body">
+               <div class="card card-options w-100">
+                  <div class="wrapper-options">
+                     <div class="autocomplete">
+                        <span class="select-title">Destination</span>
+                        <input id="inp-dist" type="text" name="city-list" placeholder="City Name">
+                     </div>
+
+                     <div id="date-in">
+                        <span class="select-title">Check In</span>
+                        <input type="text" id="picker-in" class="picker" placeholder="Check In">
+                     </div>
+
+                     <div id="date-out">
+                        <span class="select-title">Check Out</span>
+                        <input type="text" id="picker-out" class="picker" placeholder="Check Out">
+                     </div>
+
+                     <div>
+                        <input id="btn-search" type="submit" value="Search">
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- end section 1 -->
+         </div>
+         <!-- Content Section -->
+         <div class="section2">
+            <div class="section2-content">
+               <div class="video-container">
+                  <video autoplay muted loop id="travel-video">
+                     <source src="./static/resources/ask_panda.webm" type="video/webm">
+                     <source src="./static/resources/ask_panda.mp4" type="video/mp4">
+                  </video>
+               </div>
+               <div class="intro-card">
+                  {% if about_data %}
+                  <h1>{{ about_data.title }}</h1>
+                  <h3>{{ about_data.slogan }} </h3>
+                  <p>{{ about_data.info }}</p>
+                  {% endif %}
+                  <input id="btn-lucky" type="submit" value="Lucky!">
+               </div>
+
+               <div class="offer-results">
+                  <div class="card-columns">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- start: template code   -->
+      <div id="card-template" class="card w-260">
+         <a href="#">
+         <img id="card-image" class="card-img-top" src="" alt="">
+         </a>
+         <div class="card-body">
+            <h4 id="card-title" class="card-title"> item.title </h4>
+            <p id="card-text" class="card-text"> item.city </p>
+            <p class="card-text">
+               <small id="card-stars" class="text-muted">
+               item.stars
+               </small>
+            </p>
+
+         </div>
+         <div class="card-footer">
+            <small class="text-muted"><del><span id="old-price"> 00.00$</span> </del></small>
+            <span class="sp-price">
+            <b><span id="new-price">00.00$</span></b>
+            <small class="text-muted">avg/night</small>
+            </span>
+         </div>
+
+         <button id="btn-panda" onclick="get_advice(this)">Ask Panda</button>
+      </div>
+
+      <!-- Modal -->
+      <div id="dialog-panda" class="modal fade">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Panda Advisor</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p id="dialog-content"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end: template code-->
+
+   </body>
+</html>
+

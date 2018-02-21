@@ -39,6 +39,11 @@ if you don't have anaconda download from [here](https://anaconda.org/)
 - Small screen:
 <img src="screenshots/pnda-small-screen.png" alt="Small Screen" width="350"/>
 
+## Disclaimer
+Following sources used in the template. In case of any conflict with owners they can contact me and sources will be deleted immediately:
+- The template support video as background, video parts in the code taken from vimeo video (TRAVEL LOVE). 
+- City list taken from public open source dataset.
+
 License
 -------
     The MIT License (MIT)

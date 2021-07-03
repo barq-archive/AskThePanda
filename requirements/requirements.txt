@@ -13,7 +13,7 @@ MarkupSafe==1.0
 numpy==1.14.0
 pandas==0.22.0
 pycparser==2.18
-pyOpenSSL==17.4.0
+pyOpenSSL==17.5.0
 PySocks==1.6.8
 python-dateutil==2.6.1
 pytz==2018.3
